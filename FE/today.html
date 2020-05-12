@@ -5,8 +5,9 @@
 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-  <title>Daftar Gedung</title>
+  <title>Statistik Gedung</title>
 
+  <script src="script/detailgedung.js"></script>
   <script src="script/daftargedung.js"></script>
 
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,900' rel='stylesheet' type='text/css'>
@@ -87,41 +88,77 @@
 <body>
 
   <div class="container">
-
+  <h1>Statistik</h1>
     <div class="row">
       <!-- Navbar -->
       <div class="col-sm-12 col-lg-12">
         <nav class="navbar navbar-inverse" role="navigation">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><b>Gedung</b></a>
-          </div>
+           <div class="collapse navbar-collapse navbar-ex2-collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="detailgedung.html">Today</a></li>
+                  <li><a href="week.html">Week</a></li>
+                  <li><a href="year.html">Year</a></li>
+                </ul>
+              </div>
         </nav>
 
       </div>
     </div>
     <!-- Navs done -->
     <div class="row">
-        <div class="col-sm-6 col-lg-6">
-          <a class="btn btn-default" href="pilihan.html">Back</a>
+        <div class="col-sm-12 col-lg-12">
+          <a class="btn btn-default" href="daftargedung.html">Back</a>
     </div>
     <div class="container">
     <div class="row">
+    	<div class="col-sm-12 col-lg-12">
+    		<nav class="navbar navbar-inverse" role="navigation">
+    			<div class="collapse navbar-collapse navbar-ex2-collapse">
+					<a class="navbar-brand" href="#" id="isiGedung"></a>
+	  			</div>
+	 		</nav>
+	 	</div>
+	 </div>
+	 </div>
+	 <div class="container">
+    <div class="row">
       <div class="col-sm-12 col-lg-12">
+        <h2>Estimasi Biaya</h2>
+        <h2 align="center" id="estimasiBiayaToday"></h2>
           <table class="table table-striped" data-effect="fade">
-            <tbody id="tabelDaftarGedung">
+            <thead>
+              <tr>
+                <th>Atribut</th>
+                <th>Informasi</th>
+              </tr>
+            </thead>
+            <tbody id="tabelStatistikGedung">
+              <tr>
+                <td>Jumlah Kelas</td>
+                <td id="jumlahKelas"></td>
+              </tr>
+              <tr>
+                <td>Rata - rata jumlah lampu yang digunakan</td>
+                <td id="average"></td>
+              </tr>
             </tbody>
           </table>
       </div>
     </div>
     </div>
 
+
+
+
   <script src="assets/js/jquery.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
 
   <script src="assets/js/typeahead.min.js"></script>
   <script>
-    window.onload = loadDataGedung();
+    window.onload = getStatistikGedung();
+    window.onload = isiIdGedung();
+    window.onload = isiEstimasiBiayaHari();
   </script>
 
 </body>
