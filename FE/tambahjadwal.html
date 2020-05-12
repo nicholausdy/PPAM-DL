@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>Tambah Jadwal</title>
+
+  <script src="script/tambahJadwal.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,900' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Techie Bootstrap 3 skin">
+  <meta name="keywords" content="bootstrap 3, skin, flat">
+  <meta name="author" content="bootstraptaste">
+
+  <!-- Bootstrap css -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.techie.css" rel="stylesheet">
+
+
+  <!-- Docs Custom styles -->
+  <style>
+    body,
+    html {
+      overflow-x: hidden
+    }
+
+    body {
+      padding: 6px
+    }
+
+    footer {
+      border-top: 1px solid #ddd;
+      padding: 30px;
+      margin-top: 50px
+    }
+    .row>[class*=col-] {
+      margin-bottom: 65px
+    }
+
+    .col-sm-{
+      background: red;
+    }
+
+    .navbar-container {
+      position: relative;
+      min-height: 100px
+    }
+
+	.navbar-default {
+	 margin : 0 !important; 
+	}
+
+    .navbar.navbar-fixed-bottom,
+    .navbar.navbar-fixed-top {
+      position: absolute;
+      top: 0px;
+      z-index: 0
+    }
+
+    .navbar.navbar-fixed-bottom .container,
+    .navbar.navbar-fixed-top .container {
+      max-width: 100%
+    }
+
+    .btn-group {
+      margin-bottom: 10px
+    }
+
+    .form-inline input[type=password],
+    .form-inline input[type=text],
+    .form-inline select {
+      width: 180px
+    }
+
+    .input-group {
+      margin-bottom: 10px
+    }
+
+    .pagination {
+      margin-top: 0px
+    }
+
+    .navbar-inverse {
+      margin: 0
+    }
+
+    .navbar-inverse-modify {
+      margin: 0;
+      background-color: #647687;
+    }
+
+    .navbar-brand{
+    	color: white;
+    	font-size: 25px;
+    }
+    td .label {
+      cursor: pointer;
+    }
+
+    h2 { 
+	    border-bottom: 1px solid black 
+	}
+
+	.table thead>tr>th {
+   		vertical-align: bottom;
+	   	border-bottom: 0px solid hsl(0, 0%, 87%);
+	}
+
+	.tTambahKelas{
+		border-collapse: collapse;
+		margin: 3% 0%;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 0 20px rgba(0,0,0,0.15);
+	}
+
+	.tTambahKelas th,
+	.tPTambahKelas td{
+		padding: 12px 15px
+	}
+
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 50%;
+	}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row">
+      <!-- Navbar -->
+      <div class="col-sm-12 col-lg-12">
+            <nav class="navbar navbar-inverse-modify navbar-fixed-top container" role="navigation">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                <a class="navbar-brand" href="#"><b>CSLC Kelas</b></a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-ex2-collapse">
+                <ul class="nav navbar-nav">	
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            </nav>
+
+          </div>
+    </div>
+    <!-- Navs done -->
+    <div class="row" style="background-color:white">	
+    <div class="col-sm-12 col-lg-12">
+    <h2>Tambah Jadwal</h2>
+        <div class="col-sm-6">
+        	<table class="tTambahKelas">
+			<tr>
+				<th>Kode Kuliah</th>		
+				<th><input name="idKuliah" type="text" id="idKuliah"></th></tr>
+			<tr>
+				<th>Mata Kuliah</th>		
+				<th><input name="namaKuliah" type="text" id="namaKuliah"></th>
+			</tr>
+			<tr>
+				<th>Hari</th>
+        <th><input name="hari" type="text" id="hari"></th>		
+			</tr>
+			<tr>
+				<th>Jam Mulai</th>	
+        <th><input name="jamMulai" type="text" id="jamMulai"></th>	
+			</tr>
+			<tr>
+				<th>Jam Selesai</th>	
+        <th><input name="jamSelesai" type="text" id="jamSelesai"></th>	
+			</tr>
+		</table><br>
+		<a class="btn btn-success btn-lg" onclick="postJadwal()" href="#">Tambah Jadwal</a>
+          </div>
+    </div>
+  <!-- Main Scripts-->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 3 has typeahead optionally -->
+  <script src="assets/js/typeahead.min.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>
