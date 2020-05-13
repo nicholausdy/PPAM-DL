@@ -3,6 +3,8 @@ const assets = [
   "/",
   "/index.html",
   "/assets/js/login.js",
+  "/opening.html",
+  "/assets/js/entrance.js",
   "/assets/css/bootstrap.min.css",
   "/assets/css/bootstrap.techie.css",
   "https://fonts.googleapis.com/css?family=Lato:300,400,700",
