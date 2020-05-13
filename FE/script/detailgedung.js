@@ -5,13 +5,35 @@ const isiIdGedung = async () => {
   idGedungElem.innerText = idGedung;
 };
 
+async function priceFormatter(num) {
+  const num_str = num.toString();
+  const n = num_str.length;
+  const count = Math.ceil(n / 3) 
+  const result = []
+  let changed_string = num_str
+  let sub_string = ''
+  for (i = 0; i < count; i++ ){
+      if (changed_string.length >= 3){
+          sub_string = changed_string.slice(-3)
+          changed_string = changed_string.replace(changed_string, changed_string.slice(0,changed_string.length - 3 ) )
+          result.push(sub_string)
+      }
+      else {
+          result.push(changed_string)
+      }
+  }
+  let result_reverse = result.reverse()
+  const denom = 'Rp '.concat(result_reverse.join('.'),',-')
+  return denom
+}
+
 const isiEstimasiBiayaHari = async () => {
   let biayaHari = window.localStorage.getItem('biayaToday');
 
   console.log(biayaHari);
 
   let biayaHariElem = document.getElementById('estimasiBiayaToday');
-  biayaHariElem.innerText = biayaHari;
+  biayaHariElem.innerText = await priceFormatter(biayaHari);
 };
 
 const isiEstimasiBiayaMinggu = async () => {
@@ -19,7 +41,7 @@ const isiEstimasiBiayaMinggu = async () => {
   console.log(biayaMinggu);
 
   let biayaMingguElem = document.getElementById('estimasiBiayaWeek');
-  biayaMingguElem.innerText = biayaMinggu;
+  biayaMingguElem.innerText = await priceFormatter(biayaMinggu);
 };
 
 const isiEstimasiBiayaTahun = async () => {
@@ -27,7 +49,7 @@ const isiEstimasiBiayaTahun = async () => {
   console.log(biayaTahun);
 
   let biayaTahunElem = document.getElementById('estimasiBiayaYear');
-  biayaTahunElem.innerText = biayaTahun;
+  biayaTahunElem.innerText = await priceFormatter(biayaTahun);
 };
 
 const getStatistikGedung = async () => {
