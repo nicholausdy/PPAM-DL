@@ -9,7 +9,7 @@ async function priceFormatter(num) {
   const num_str = num.toString();
   const n = num_str.length;
   const count = Math.ceil(n / 3) 
-  const result = []
+  let result = []
   let changed_string = num_str
   let sub_string = ''
   for (i = 0; i < count; i++ ){
@@ -22,7 +22,7 @@ async function priceFormatter(num) {
           result.push(changed_string)
       }
   }
-  let result_reverse = result.reverse()
+  const result_reverse = result.reverse()
   const denom = 'Rp '.concat(result_reverse.join('.'),',-')
   return denom
 }
